@@ -4,3 +4,6 @@
 01_FightDemo/Library
 01_FightDemo/.vsconfig
 *.sln
+01_FightDemo/.vs
+01_FightDemo/obj
+01_FightDemo/.idea
