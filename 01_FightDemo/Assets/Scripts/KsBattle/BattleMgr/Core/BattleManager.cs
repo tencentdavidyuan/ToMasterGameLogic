@@ -7,6 +7,7 @@ namespace KsBattle.BattleMgr.Core
 {
     /// <summary>
     /// 战斗管理器
+    /// 负责战斗的创建、查找、销毁。
     /// </summary>
     public class BattleManager : Disposer
     {
