@@ -1,8 +1,8 @@
 using Framework;
 
-namespace KsBattle.BattleData
+namespace KsBattle.BattleMgr.Core
 {
-    public class BattleData : Disposer
+    public abstract class BattleBase : Disposer
     {
         protected override void OnDisposer()
         {

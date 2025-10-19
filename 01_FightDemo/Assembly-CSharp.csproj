@@ -45,16 +45,20 @@
     <Analyzer Include="C:\Program Files\Unity\Hub\Editor\2022.3.60f1\Editor\Data\Tools\Unity.SourceGenerators\Unity.Properties.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Scripts\KsBattle\CombatEntities\EntityObject.cs" />
+    <Compile Include="Assets\Scripts\KsBattle\CombatEntities\Core\EntityObject.cs" />
+    <Compile Include="Assets\Scripts\KsBattle\Scene\BattleScene.cs" />
     <Compile Include="Assets\Scripts\KsBattle\CombatObjects\CombatObject.cs" />
     <Compile Include="Assets\Scripts\KsBattle\KsBattleSystem.cs" />
+    <Compile Include="Assets\Scripts\KsBattle\EffectManager\EffectMgr.cs" />
+    <Compile Include="Assets\Scripts\KsBattle\BattleMgr\Core\BattleBase.cs" />
+    <Compile Include="Assets\Scripts\KsBattle\CombatEntities\Core\EntityManager.cs" />
+    <Compile Include="Assets\Scripts\KsBattle\BattleMgr\BattleTowerDefense.cs" />
     <Compile Include="Assets\Scripts\Framework\Disposer.cs" />
-    <Compile Include="Assets\Scripts\KsBattle\BattleData\Core\BattleDataManager.cs" />
-    <Compile Include="Assets\Scripts\KsBattle\BattleData\BattleDataEmpty.cs" />
     <Compile Include="Assets\Scripts\KsBattle\CombatObjects\CombatUnit.cs" />
     <Compile Include="Assets\Scripts\KsBattle\CombatEntities\EntityGo.cs" />
-    <Compile Include="Assets\Scripts\KsBattle\BattleData\Core\BattleData.cs" />
+    <Compile Include="Assets\Scripts\KsBattle\BattleMgr\BattleEmpty.cs" />
     <Compile Include="Assets\Scripts\KsBattle\KsBattleEnum.cs" />
+    <Compile Include="Assets\Scripts\KsBattle\BattleMgr\Core\BattleManager.cs" />
     <Reference Include="UnityEngine">
       <HintPath>C:\Program Files\Unity\Hub\Editor\2022.3.60f1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
     </Reference>
@@ -697,9 +701,6 @@
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>E:\ToMasterSerials\ToMasterGameLogic\01_FightDemo\Library\ScriptAssemblies\Unity.Timeline.Editor.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.VisualScripting.Shared.Editor">
-      <HintPath>E:\ToMasterSerials\ToMasterGameLogic\01_FightDemo\Library\ScriptAssemblies\Unity.VisualScripting.Shared.Editor.dll</HintPath>
-    </Reference>
     <Reference Include="Unity.ScriptableBuildPipeline">
       <HintPath>E:\ToMasterSerials\ToMasterGameLogic\01_FightDemo\Library\ScriptAssemblies\Unity.ScriptableBuildPipeline.dll</HintPath>
     </Reference>
@@ -708,6 +709,9 @@
     </Reference>
     <Reference Include="UniTask.Addressables">
       <HintPath>E:\ToMasterSerials\ToMasterGameLogic\01_FightDemo\Library\ScriptAssemblies\UniTask.Addressables.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.VisualScripting.Shared.Editor">
+      <HintPath>E:\ToMasterSerials\ToMasterGameLogic\01_FightDemo\Library\ScriptAssemblies\Unity.VisualScripting.Shared.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VisualStudio.Editor">
       <HintPath>E:\ToMasterSerials\ToMasterGameLogic\01_FightDemo\Library\ScriptAssemblies\Unity.VisualStudio.Editor.dll</HintPath>
@@ -718,14 +722,14 @@
     <Reference Include="Unity.VisualScripting.Core">
       <HintPath>E:\ToMasterSerials\ToMasterGameLogic\01_FightDemo\Library\ScriptAssemblies\Unity.VisualScripting.Core.dll</HintPath>
     </Reference>
-    <Reference Include="UnityEngine.UI">
-      <HintPath>E:\ToMasterSerials\ToMasterGameLogic\01_FightDemo\Library\ScriptAssemblies\UnityEngine.UI.dll</HintPath>
-    </Reference>
     <Reference Include="Unity.VisualScripting.Core.Editor">
       <HintPath>E:\ToMasterSerials\ToMasterGameLogic\01_FightDemo\Library\ScriptAssemblies\Unity.VisualScripting.Core.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Rider.Editor">
       <HintPath>E:\ToMasterSerials\ToMasterGameLogic\01_FightDemo\Library\ScriptAssemblies\Unity.Rider.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UI">
+      <HintPath>E:\ToMasterSerials\ToMasterGameLogic\01_FightDemo\Library\ScriptAssemblies\UnityEngine.UI.dll</HintPath>
     </Reference>
     <Reference Include="VContainer">
       <HintPath>E:\ToMasterSerials\ToMasterGameLogic\01_FightDemo\Library\ScriptAssemblies\VContainer.dll</HintPath>
@@ -787,11 +791,11 @@
     <Reference Include="Unity.ScriptableBuildPipeline.Editor">
       <HintPath>E:\ToMasterSerials\ToMasterGameLogic\01_FightDemo\Library\ScriptAssemblies\Unity.ScriptableBuildPipeline.Editor.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.Addressables">
-      <HintPath>E:\ToMasterSerials\ToMasterGameLogic\01_FightDemo\Library\ScriptAssemblies\Unity.Addressables.dll</HintPath>
-    </Reference>
     <Reference Include="Unity.Profiling.Core">
       <HintPath>E:\ToMasterSerials\ToMasterGameLogic\01_FightDemo\Library\ScriptAssemblies\Unity.Profiling.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Addressables">
+      <HintPath>E:\ToMasterSerials\ToMasterGameLogic\01_FightDemo\Library\ScriptAssemblies\Unity.Addressables.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>

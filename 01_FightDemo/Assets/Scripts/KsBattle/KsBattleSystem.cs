@@ -1,19 +1,29 @@
 using Framework;
-using KsBattle.BattleData;
+using KsBattle.BattleMgr.Core;
+
+
 
 namespace KsBattle
 {
+    /// <summary>
+    /// 销毁战斗系统
+    /// </summary>
     public class KsBattleSystem : Disposer
     {
+        /// <summary> 是否已初始化 </summary>
+        private static bool _initialized = false;
         /// <summary> KsBattle 系统 </summary>
         private static KsBattleSystem _ksBattleSystem;
         /// <summary> KSBattle 实例化器 </summary>
         private static KsBattleSystem Instance => _ksBattleSystem ??= new KsBattleSystem();
 
+        
+        /// <summary> 战斗管理器 </summary>
+        private BattleManager _battleManager;
 
-        public BattleDataManager BattleDataMgr { get; private set; }
-
-
+        /// <summary>
+        /// 构造函数
+        /// </summary>
         private KsBattleSystem()
         {
         }
@@ -23,34 +33,48 @@ namespace KsBattle
         /// </summary>
         protected override void OnDisposer()
         {
-            
+            DestroyBattleManager();
         }
 
         /// <summary>
         /// 初始化
         /// </summary>
         /// <returns></returns>
-        private bool Initialize()
+        public bool Initialize()
         {
-            return false;
+            if (_initialized)
+                return true;
+
+            if (!CreateBattleManager())
+            {
+                
+                return false;
+            }
+
+            return true;
         }
 
-        private void Destroy()
+        #region 战斗管理器
+
+        /// <summary>
+        /// 创建战斗
+        /// </summary>
+        /// <returns></returns>
+        private bool CreateBattleManager()
         {
-            
+            _battleManager ??= new BattleManager();
+            return _battleManager != null;
         }
 
-        private bool CreateBattleDataManager()
+        /// <summary>
+        /// 销毁战斗
+        /// </summary>
+        private void DestroyBattleManager()
         {
-            BattleDataMgr ??= new BattleDataManager();
-            return BattleDataMgr != null;
+            _battleManager?.Dispose();
+            _battleManager = null;
         }
 
-        private void DestroyBattleDataManager()
-        {
-            BattleDataMgr = null;
-        }
-
-
+        #endregion
     }
 }
